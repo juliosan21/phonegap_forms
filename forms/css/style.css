@@ -1,0 +1,169 @@
+a{
+	text-decoration: none;	
+}
+html, body {
+   margin: 0px;
+   padding : 0px;
+}
+body{
+	font-family: "Myriad Pro",Sans-serif;;
+	font-size: 16px;
+	font-weight: 100 !important;
+	background: rgb(58,138,68) !important;
+	text-shadow:0px 0px 0px;
+}
+img{
+	display: block;
+	width: 100%;
+	margin: auto auto;
+}
+
+::-webkit-input-placeholder {
+   color: rgb(17,46,124);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgb(17,46,124);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgb(17,46,124);  
+}
+
+:-ms-input-placeholder {  
+   color: rgb(17,46,124);  
+}
+
+#home [data-role="main"], #forms-opciones [data-role="main"]{
+	background: url("../img/background.jpg") no-repeat;
+	background-size: 100% 100%;
+	height: 550px
+}
+
+.arrow-right {
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid white;
+}
+
+.b-0{
+	border: 0px;
+}
+
+.block-green{
+	background: rgb(58,138,68) !important;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+	color:white;
+	text-shadow:0px 0px 0px;
+	font-family: "Myriad Pro",Sans-serif;
+	font-weight: normal !important;
+	line-height: 1.3em;
+	padding: 5px 10px 5px 10px;
+	margin: 10px 10px;
+}
+.block-green div:first-child{
+	font-size: .7em !important;
+}
+
+.block-green div:last-child{
+	font-size: .8em !important;
+}
+
+.como-funciona{
+	padding: .5em 1.5em 1em 1.5em;
+}
+
+.form-content{
+	background:rgb(228,229,231);
+}
+
+.footer-info{
+	font-size: .6em;
+	font-weight: 100 !important;
+	text-shadow:0px 0px 0px;
+}
+
+.footer-url{
+	font-size: .8em;
+	font-weight: 100 !important;
+	text-shadow:0px 0px 0px;
+}
+
+.logo-home{
+	margin: 100px auto 30px auto;
+	width:80%;
+}
+
+.logo-home img, .logo-title img{
+	width: 100%;
+}
+
+.logo-title{
+	width:80%;
+	margin: auto auto 10px auto;
+}
+
+.menu-opciones{
+	width:70%;
+	margin:auto;
+}
+
+.menu-opciones div{
+	margin:20px auto;
+}
+
+.i-back img{
+	width: 1.5em;
+}
+
+.f-right{
+	float: right;
+}
+
+.head-bar{
+	letter-spacing: 13;
+	font-size:.8em;
+	font-weight: 100 !important;
+	background: rgb(53,135,64);
+	color:white;
+	padding: 8px;
+	vertical-align: top;
+}
+
+.terminos-bg{
+	background: rgb(228,229,231);
+	padding-left: 0px;
+}
+
+.terminos-bg ul{
+	height: 100%;
+	overflow-y: auto;
+	font-size: .8em;
+	margin:0px;
+}
+
+.t-right{
+	text-align: right;
+}
+
+
+.ui-footer{
+	background: rgb(58,138,68) !important;
+	color:white !important;
+	padding: 5px;
+	text-align: center;
+	display:block;
+	border: 0px solid black;
+}
+
+
+
+
+
+
+.ui-grid-a{
+	overflow:initial !important;
+}
