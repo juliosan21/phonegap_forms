@@ -11,16 +11,6 @@
 </head>
 <body>
 
-	<style>
-	#custom-footer .ui-block-a {
-	    width: 60% !important;
-	}
-
-	#custom-footer .ui-block-b {
-	    width: 40% !important;    
-	}
-</style>
-
 	<div data-role="page" id="home">
 		<div data-role="main" class="ui-content">
 			<div class="logo-home">
@@ -46,7 +36,7 @@
 					</a>	
 				</div>
 				<div>
-					<a href="#registros-funcionarios">
+					<a href="#form-2">
 						<img src="img/home-opcion-4.png" style="width:90%; margin:auto auto;" alt="">
 					</a>	
 				</div>
@@ -224,7 +214,11 @@
 	<div data-role="page" id="forms-opciones">
 
 		<div data-role="header" class="b-0">
-			<br>
+			<span class="i-back f-right">
+				<a data-transition="none" data-direction="reverse" href="#home">
+					<img src="img/icon-back.png" alt=""/>
+				</a>
+			</span>
 			<img src="img/form-opciones.png" alt="" style="margin-top: 1px; background: white;">
 		</div><!-- /header -->
 
@@ -334,121 +328,372 @@
 			</div>
 			<div class="head-bar">
 				<span class="arrow-right"></span>
-				<span id="title-form"></span>
+				<span id="title-form" style="vertical-align:top; margin-left:5px;"></span>
 				<span class="i-back f-right">
-					<!-- <a data-transition="none" data-direction="reverse" >
+					<a href="#forms-opciones" data-transition="none" data-direction="reverse" >
 						<img src="img/icon-back.png" alt="" />
-					</a> -->
+					</a>
 				</span>
 			</div>
 		</div><!-- /header -->
 
-		<div data-role="main" class="ui-content form-content">
-			<input required="" type="text" id="nom" name="nom" class="form-control input-sm" placeholder="Nombre o Razón social">
-			<input required="" type="text" id="ape" name="ape" class="form-control input-sm" placeholder="Apellido paterno">
-			<input required="" type="text" id="apem" name="apem" class="form-control input-sm" placeholder="Apellido materno">
-			<input required="" type="text" id="dni" name="dni" maxlength="11" class="form-control input-sm error" placeholder="DNI,CE o RUC">
-			<input required="" type="text" id="eda" name="eda" maxlength="2" class="form-control input-sm error" placeholder="Edad">
+		<div data-role="main" class="ui-content form-content" name="agregar1">
+			<form action="#" id="form-1-save">
+				<input type="hidden" name="preg2" id="preg2" value="">
+				<input required="required" type="text" id="nom" name="nom" class="form-control input-sm" placeholder="Nombre o Razón social">
+				<input required="required" type="text" id="ape" name="ape" class="form-control input-sm" placeholder="Apellido paterno">
+				<input required="required" type="text" id="apem" name="apem" class="form-control input-sm" placeholder="Apellido materno">
 
-			<input type="text" id="ema" name="ema" placeholder="Correo electronico">
+				<table width="100%">
+					<tr>
+						<td wdith="70%">
+							<input required="required" type="text" id="dni" name="dni" maxlength="11" class="form-control input-sm error" placeholder="DNI,CE o RUC">
+						</td>
+						<td width="30%">
+							<input required="required" type="text" id="eda" name="eda" maxlength="2" class="form-control input-sm error" placeholder="Edad">
+						</td>
+					</tr>
+				</table>
 
-			<input required="" type="text" id="tlf" name="tlf" class="form-control input-sm error" placeholder="Fijo y/o celular">
+				<input type="text" id="ema" name="ema" placeholder="Correo electronico">
 
-			<select required="" name="depa" id="depa" class="form-control input-sm valid">
-				<option value="11660000">MEXICO</option>
-				<option selected="selected" value="11950000">PERU</option>
-			</select>
-			<select name="prov" id="prov" class="form-control input-sm valid">
-					  <option value="0">Seleccione su Estado</option>
-					  <option value="11950100">LIMA</option>
-					  <option value="11950200">ANCASH</option>
-					  <option value="11950300">AMAZONAS</option>
-					  <option value="11950400">APURIMAC</option>
-					  <option value="11950500">AREQUIPA</option>
-					  <option value="11950600">AYACUCHO</option>
-					  <option value="11950700">CAJAMARCA</option>
-					  <option value="11950800">CUSCO</option>
-					  <option value="11950900">HUANCAVELICA</option>					  
-					  <option value="11951200">HUANUCO</option>
-					  <option value="11951300">ICA</option>					  
-					  <option value="11951400">JUNIN</option>					  
-					  <option value="11951500">LA LIBERTAD</option>					  
-					  <option value="11951600">LAMBAYEQUE</option>					  
-					  <option value="11951700">LORETO</option>					  
-					  <option value="11951800">MADRE DE DIOS</option>					  
-					  <option value="11951900">MOQUEGUA</option>					  
-					  <option value="11952000">PASCO</option>					  
-					  <option value="11952100">PIURA</option>					  
-					  <option value="11952200">PUNO</option>					  
-					  <option value="11952300">SAN MARTIN</option>					  
-					  <option value="11952400">TACNA</option>					  
-					  <option value="11952500">TUMBES</option>					  
-					  <option value="11952600">UCAYALI</option>					  					  
-					  </select>
-			<select name="dist" id="dist" class="form-control input-sm" >
-				<option value="">Seleccione su Ciudad </option>
-			</select>
+				<input required="required" type="text" id="tlf" name="tlf" class="form-control input-sm error" placeholder="Fijo y/o celular">
 
-			<div class="ui-field-contain">
-				<select required="" name="preg1" id="preg1" class="form-control input-sm">
-					<option value="">Condición Laboral</option>
-					<option value="1">Empleado Dependiente con Boleta</option>
-					<option value="2">Profesional Indep. con Recibo por Honorarios</option>
-					<option value="3">Pequeña o Micro Empresa</option>
-					<option value="8">Grande o mediana Empresa</option>
-					<option value="9">Jubilado</option>
-					<option value="10">Empleado de Pequeña o Micro Empresa</option>
-					<option value="11">Chofer Transportista (bus, combi, taxi, mototaxi)</option>
-					<option value="12">Empleada del Hogar</option>
-					<option value="13">Oficios Varios (Gasfitero, Maestro de Obra, etc)</option>
-					<option value="24">Consultor(a) Ventas por Catálogo</option>
-					<option value="25">Rentista / ingreso por alquileres</option>
-					<option value="26">Comercio Ambulatorio</option>
-					<option value="28">Ama de Casa</option>
-					<option value="29">Otros</option>
+				<select required="required" name="depa" id="depa" class="form-control input-sm valid">
+					<option value="11660000">MEXICO</option>
+					<option selected="selected" value="11950000">PERU</option>
 				</select>
-			</div>
-			
-			<table width="100%">
-				<tr>
-					<td>
-						<input required="" type="text" id="preg3" name="preg3" placeholder="Monto Solicitado">
-					</td>
-					<td>
-						<select required="" name="preg4" id="preg4">
-							<option value="22">S/.</option>
-							<option value="23">US$</option>
-			           </select>
-					</td>
-				</tr>
-			</table>
-			
-			<select name="conta" id="conta">
-				<option value="0"> Todos (Recomendado)</option>
-				<option value="1"> Bancos y Financieras</option>
-				<option value="2"> Edpymes y Cajas y Otros</option>
-			</select>
+				<select name="prov" id="prov" class="form-control input-sm valid prov">
+						  <option value="0">Seleccione su Estado</option>
+						  <option value="11950100">LIMA</option>
+						  <option value="11950200">ANCASH</option>
+						  <option value="11950300">AMAZONAS</option>
+						  <option value="11950400">APURIMAC</option>
+						  <option value="11950500">AREQUIPA</option>
+						  <option value="11950600">AYACUCHO</option>
+						  <option value="11950700">CAJAMARCA</option>
+						  <option value="11950800">CUSCO</option>
+						  <option value="11950900">HUANCAVELICA</option>					  
+						  <option value="11951200">HUANUCO</option>
+						  <option value="11951300">ICA</option>					  
+						  <option value="11951400">JUNIN</option>					  
+						  <option value="11951500">LA LIBERTAD</option>					  
+						  <option value="11951600">LAMBAYEQUE</option>					  
+						  <option value="11951700">LORETO</option>					  
+						  <option value="11951800">MADRE DE DIOS</option>					  
+						  <option value="11951900">MOQUEGUA</option>					  
+						  <option value="11952000">PASCO</option>					  
+						  <option value="11952100">PIURA</option>					  
+						  <option value="11952200">PUNO</option>					  
+						  <option value="11952300">SAN MARTIN</option>					  
+						  <option value="11952400">TACNA</option>					  
+						  <option value="11952500">TUMBES</option>					  
+						  <option value="11952600">UCAYALI</option>					  					  
+						  </select>
+				<select name="dist" id="dist" class="form-control input-sm" >
+					<option value="">Seleccione su Ciudad </option>
+				</select>
 
+				<div class="ui-field-contain">
+					<select required="required" name="preg1" id="preg1" class="form-control input-sm">
+						<option value="">Condición Laboral</option>
+						<option value="1">Empleado Dependiente con Boleta</option>
+						<option value="2">Profesional Indep. con Recibo por Honorarios</option>
+						<option value="3">Pequeña o Micro Empresa</option>
+						<option value="8">Grande o mediana Empresa</option>
+						<option value="9">Jubilado</option>
+						<option value="10">Empleado de Pequeña o Micro Empresa</option>
+						<option value="11">Chofer Transportista (bus, combi, taxi, mototaxi)</option>
+						<option value="12">Empleada del Hogar</option>
+						<option value="13">Oficios Varios (Gasfitero, Maestro de Obra, etc)</option>
+						<option value="24">Consultor(a) Ventas por Catálogo</option>
+						<option value="25">Rentista / ingreso por alquileres</option>
+						<option value="26">Comercio Ambulatorio</option>
+						<option value="28">Ama de Casa</option>
+						<option value="29">Otros</option>
+						<option value="0">Todos</option>
+					</select>
+				</div>
+				
+				<table width="100%">
+					<tr>
+						<td id="form-campo-cambia">
+							<input required="required" type="text" id="preg3" name="preg3" placeholder="Monto Solicitado">
+							<select required name="monto" id="monto" class="form-control input-sm">
+								<option value="0">10,000 a 29,999</option>
+								<option value="1">30,000 a 99,999</option>
+								<option value="2">100,000 a mas</option>
+							</select>
+						</td>
+						<td>
+							<select required="required" name="preg4" id="preg4">
+								<option value="22">S/.</option>
+								<option value="23">US$</option>
+				           </select>
+						</td>
+					</tr>
+				</table>
+				
+				<select name="conta" id="conta">
+					<option value="0"> Todos (Recomendado)</option>
+					<option value="1"> Bancos y Financieras</option>
+					<option value="2"> Edpymes y Cajas y Otros</option>
+				</select>
+
+				<div style="width:70%; margin: auto auto;">
+					<a href="#" data-send="0" class="form-send">
+						<table width="100%">
+							<tr>
+								<td width="80%" class="click-terminos">
+									Click aquí para aceptar los
+									Términos y Condiciones y
+									Política de Privacidad
+								</td>
+								<td widht="30%">
+									<img src="img/checkbox-uncheck.png">
+								</td>
+							</tr>
+						</table>
+					</a>
+				</div>
+			</form>		
 		</div><!-- /content -->
 	</div><!-- /page -->
 
+	<div data-role="page" id="form-2">
+
+		<div data-role="header">
+			<div>
+				<img src="img/forms-head.jpg" alt="" style="margin-top: -1px;">
+			</div>
+			<div class="head-bar">
+				<span class="arrow-right"></span>
+				<span style="vertical-align:top; margin-left:5px;">REGISTRO PARA FUNCIONARIOS</span>
+				<span class="i-back f-right">
+					<a href="#forms-opciones" data-transition="none" data-direction="reverse" >
+						<img src="img/icon-back.png" alt="" />
+					</a>
+				</span>
+			</div>
+		</div><!-- /header -->
+
+		<div data-role="main" class="ui-content form-content" >
+			<form action="#" id="form-2-save" name="agregar2">
+				<input id="nom2" name="nom" required="" type="text" class="form-control input-sm" maxlength="100" placeholder="Nombres y Apellidos">
+				<input id="dni2" name="dni" required="" type="text" class="form-control input-sm" maxlength="8" placeholder="D.N.I">
+				<table width="100%">
+					<tr>
+						<td width="50%">
+							<select name="rub" id="rub2" size="1" class="form-control input-sm valid" onclick="ActivarEntidad2(0,this.value)">
+								<option value="0">Tipo de Entidad</option>
+								<option value="1">BANCOS</option>
+								<option value="2">CAJAS MUNICIPALES</option>
+								<option value="3">FINANCIERAS</option>
+								<option value="4">EDPYMES</option>
+								<option value="5">CAJAS RURALES</option>
+								<option value="6">ONGs</option>
+								<option value="7">COOPERATIVAS</option>				
+							</select>
+						</td>
+						<td width="50%">
+							<select required="" name="ent" id="ent2" size="1" class="form-control">
+								<option value="0">Entidad Financiera</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%">
+					<tr>
+						<td>
+							<input id="telf_empre2" name="telf_empre" required="" type="text" class="form-control input-sm" maxlength="100" placeholder="Teléfono Empresa">
+						</td>
+						<td>
+							<input id="telf_perso2" name="telf_perso" type="text" class="form-control input-sm" maxlength="100" placeholder="Teléfono Celular">
+						</td>
+					</tr>
+				</table>
+
+				<table width="100%">
+					<tr>
+						<td>
+							<input id="telf_rpx2" name="telf_rpx" type="text" class="form-control input-sm" maxlength="100" placeholder="RPM o RPC">
+						</td>
+						<td>
+							<input id="ema_emp2" name="ema_emp" type="text" class="form-control input-sm" maxlength="100" placeholder="Correo Empresarial">
+						</td>
+					</tr>
+				</table>
+
+				<input id="ema2" name="ema" required="" type="text" class="form-control input-sm" maxlength="100" placeholder="Correo Personal">
+				<input id="pass" name="pass" required="" type="password" class="form-control input-sm valid" maxlength="15" placeholder="Generar Clave">
+
+				<h4>¿ TU ZONA DE ATENCIÓN Y TIPO DE CLIENTE?</h4>
+
+				<table width="100%">
+					<tr>
+						<td>
+							<select required="required" name="depa" id="depa" size="1" class="form-control input-sm valid">
+							<!--      <option value="11660000">MEXICO</option> -->
+						      <option selected="selected" value="11950000">PERU</option>
+					      </select>
+						</td>
+						<td>
+						    <select name="prov" class="prov" >
+								<option>Seleccione Provincia</option>
+								<option value="11950300">AMAZONAS</option>
+								<option value="11950200">ANCASH</option>
+								<option value="11950400">APURIMAC</option>
+								<option value="11950500">AREQUIPA</option>
+								<option value="11950600">AYACUCHO</option>
+								<option value="11950700">CAJAMARCA</option>
+								<option value="11950800">CUSCO</option>
+								<option value="11950900">HUANCAVELICA</option>
+								<option value="11951200">HUANUCO</option>
+								<option value="11951300">ICA</option>
+								<option value="11951400">JUNIN</option>
+								<option value="11951500">LA LIBERTAD</option>
+								<option value="11951600">LAMBAYEQUE</option>
+								<option value="11950100">LIMA</option>
+								<option value="11951700">LORETO</option>
+								<option value="11951800">MADRE DE DIOS</option>
+								<option value="11951900">MOQUEGUA</option>
+								<option value="11952000">PASCO</option>
+								<option value="11952100">PIURA</option>
+								<option value="11952200">PUNO</option>
+								<option value="11952300">SAN MARTIN</option>
+								<option value="11952400">TACNA</option>
+								<option value="11952500">TUMBES</option>
+								<option value="11952600">UCAYALI</option>
+						    </select>
+						</td>
+					</tr>
+				</table>
+
+				<div class="ui-field-contain">
+					<select name="itemsCity[]" multiple="multiple" id="dist2" data-native-menu="false">
+						<option>Seleccione Ciudad</option>
+					</select>
+				</div>
+					
+				
+				<div class="ui-field-contain" style="width:100%;">
+					<select name="itemsC[]"  multiple="multiple" id="itemsC" data-native-menu="false">
+						<option>Tipos de Cliente:</option>
+						<option value="1">Empleado Dependiente con Boleta</option>
+						<option value="2">Profesional Indep. con Recibo por Honorarios</option>
+						<option value="3">Pequeña o Micro Empresa</option>
+						<option value="8">Grande o mediana Empresa</option>
+						<option value="9">Jubilado</option>
+						<option value="10">Empleado de Pequeña o Micro Empresa</option>
+						<option value="11">Chofer Transportista (bus, combi, taxi, mototaxi)</option>
+						<option value="12">Empleada del Hogar</option>
+						<option value="13">Oficios Varios (Gasfitero, Maestro de Obra, etc)</option>
+						<option value="24">Consultor(a) Ventas por Catálogo</option>
+						<option value="25">Rentista / ingreso por alquileres</option>
+						<option value="26">Comercio Ambulatorio</option>
+						<option value="28">Ama de Casa</option>
+						<option value="29">Otros</option>
+						<option value="0">Todos</option>
+					</select>
+				</div>
+
+				<div class="ui-field-contain" style="width:100%;">
+					<select name="itemsP[]"  multiple="multiple" id="itemsP" data-native-menu="false">
+						<option>Tipos de Producto:</option>
+						<option value="17"> Crédito para Capital de Trabajo </option>
+						<option value="15"> Ordenamiento de pagos y Compra de Deuda </option>
+						<option value="16">  Crédito para compra o mejora de Vivienda</option>
+						<option value="19">  Crédito para compra de Auto o Camión </option>
+						<option value="31"> Compra o mejora tu Local Comercial</option>
+						<option value="5">  Tarjeta de Crédito </option>
+						<option value="4">  Préstamo de Libre Disponibilidad</option>
+						<option value="30">  Ahorro a Plazo Fijo</option>
+						<option value="18">  Crédito para Maquinaria o Equipo </option>
+						<option value="20">  Línea de Crédito </option>
+						<option value="0"> Todos </option>
+					</select>
+				</div>
+
+				<div class="ui-field-contain" style="width:100%;">
+					<select name="itemsM[]"  multiple="multiple" id="itemsM" data-native-menu="false">
+						<option>Montos de Crédito:</option>
+						<option value="35"> S/.0 a S/.30,000</option>
+						<option value="36"> S/.30,001 a S/.60,000</option>
+						<option value="37"> S/.60,001 a S/.90,000</option>
+						<option value="38"> S/.90,001 a mas</option>
+						<option value="0"> Todos</option>
+					</select>
+				</div>
+					
+
+				<div style="width:70%; margin: auto auto;">
+					<a href="#" data-send="0" class="form-send">
+						<table width="100%">
+							<tr>
+								<td width="80%" class="click-terminos">
+									Click aquí para aceptar los
+									Términos y Condiciones y
+									Política de Privacidad
+								</td>
+								<td widht="30%">
+									<img src="img/checkbox-uncheck.png">
+								</td>
+							</tr>
+						</table>
+					</a>
+				</div>
+				
+			</form>		
+		</div><!-- /content -->
+	</div><!-- /page -->
+	
+	
+	<div data-role="page" id="gracias">
+		<div data-role="main" class="ui-content">
+			<div class="logo-home">
+				<img src="img/home-head.png" alt="" />
+			</div>
+			<br>
+			<br>
+			<br>
+			<div class="logo-title">
+				<img src="img/text-gracias.png" alt="">
+			</div>
+
+			<div class="logo-title">
+				<a href="#forms-opciones">
+					<img src="img/btn-inicio.png" alt="" style="width:50%; margin-top:50px;">
+				</a>
+			</div>
+		</div><!-- /content -->
+
+		<div data-role="footer" class="ui-footer">
+			<div class="footer-info">Para mayor información ingresa a:</div>
+			<div class="footer-url">www.losmejorescreditos.com</div>
+		</div>
+	</div><!-- /page -->
+
 	<!-- Loader -->
-	<div class="ui-loader ui-corner-all ui-body-b ui-loader-verbose"><span class="ui-icon-loading"></span><h1 id="text-loader"></h1></div>
+	<!-- <div class="ui-loader ui-corner-all ui-body-b ui-loader-verbose"><span class="ui-icon-loading"></span><h1 id="text-loader"></h1></div> -->
+
 </body>
 
 <script>
 	var data = [
-				 { id : 1 , title : "VIVIENDA", 			id_form : 0},
-				 { id : 2 , title : "LOCAL COMERCIAL", 		id_form : 0},
-				 { id : 3 , title : "COMPRA DE DEUDAS", 	id_form : 0},
-				 { id : 4 , title : "CAPITAL DE TRABAJO", 	id_form : 0},
-				 { id : 5 , title : "AUTO o CAMIÓN", 		id_form : 0},
-				 { id : 6 , title : "MAQUINARIA o EQUIPO", 	id_form : 0},
-				 { id : 7 , title : "TARJETA DE CRÉDITO", 	id_form : 0},
-				 { id : 8 , title : "LÍNEA DE CRÉDITO", 	id_form : 0},
-				 { id : 9 , title : "LIBRE DISPONIBILIDAD", id_form : 0},
-				 { id : 10 , title : "AHORRO PLAZO FIJO", 	id_form : 0},
+				 { id : 1 , title : "VIVIENDA", 			id_form : 16},
+				 { id : 2 , title : "LOCAL COMERCIAL", 		id_form : 31},
+				 { id : 3 , title : "COMPRA DE DEUDAS", 	id_form : 15},
+				 { id : 4 , title : "CAPITAL DE TRABAJO", 	id_form : 17},
+				 { id : 5 , title : "AUTO o CAMIÓN", 		id_form : 19},
+				 { id : 6 , title : "MAQUINARIA o EQUIPO", 	id_form : 18},
+				 { id : 7 , title : "TARJETA DE CRÉDITO", 	id_form : 5},
+				 { id : 8 , title : "LÍNEA DE CRÉDITO", 	id_form : 20},
+				 { id : 9 , title : "LIBRE DISPONIBILIDAD", id_form : 4},
+				 { id : 10 , title : "AHORRO PLAZO FIJO", 	id_form : 30},
 			   ]
+	var url_save_form_1 = null;
+	var server_path = "http://losmejorescreditos.com/movilapp/";
 
 	function Loader( visible, text ){
 		if( visible ){
@@ -468,6 +713,26 @@
 		return obj;
 	}
 
+	function validar( obj ){
+		if( obj.val() == "" ){
+			obj.css("border", '2px solid red').focus();
+			return false;
+		} else {
+			obj.css("border", '0px');
+			return true;
+		}
+	}
+
+	$.mobile.defaultPageTransition   = 'none'
+	$.mobile.defaultDialogTransition = 'none'
+	$.mobile.buttonMarkup.hoverDelay = 0
+
+	$(document).one("mobileinit", function () {
+		$.mobile.defaultPageTransition   = 'none'
+		$.mobile.defaultDialogTransition = 'none'
+		$.mobile.buttonMarkup.hoverDelay = 0
+	})
+
 	function ScaleContentToDevice() {
 		scroll(0, 0);
 		var headerHeight = $("div[data-role='header']:visible").outerHeight();
@@ -482,6 +747,11 @@
 		content.height(contentheight );
 	}
 
+	$('.form-send').on('click', function(){
+		$(this).parent().parent().trigger("submit");
+	})
+
+
 	$(document).on("pageshow", function(){
 	   ScaleContentToDevice();
 	});
@@ -489,6 +759,28 @@
 	$('#forms-opciones a').on('tap', function(){
 		var obj = getObject( $(this).attr('data-id') );
 		$('#title-form').text( obj.title );
+		$('#form-1 input[type="text"]').val("");
+		$('#preg2').val( obj.id_form);
+
+		$('#form-1-save').attr('data-send', 0);
+		$('#form-1-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+		
+		setTimeout(function(){
+
+			$('#preg3').parent().hide()
+			$('#monto-button').parent().hide();
+			
+			if( obj.id_form == 30 ){
+				$('#form-1 #monto-button').parent().show();
+				url_save_form_1 = "index_registrar_ahorro.php";
+			} else {
+				$('#form-1 #preg3').parent().show()
+				url_save_form_1 = "index_registrar_demandante.php";
+			}
+
+		},500);
+
+		
 	})
 
 	$('#depa').on('change', function(){
@@ -499,7 +791,7 @@
 
 		var id = $(this).val();
 		$.ajax({
-			url : "http://losmejorescreditos.com/movilapp/a_selectprovincia.php?idd=" + id,
+			url : server_path + "a_selectprovincia.php?idd=" + id,
 			type : "GET",
 			dataType : "xml", 
 			success : function( req ){
@@ -516,15 +808,16 @@
 		})
 	})
 
-	$('#prov').on('change', function(){
+	$('.prov').on('change', function(){
+		console.log( "s" );
 
 		Loader( true, "Cargando Ciudades..." );
 
-		$('#dist').html("");
+		$('#dist,#dist2').html("");
 
 		var id = $(this).val();
 		$.ajax({
-			url : "http://losmejorescreditos.com/movilapp/a_selectdistrito.php?idp=" + id,
+			url : server_path + "a_selectdistrito.php?idp=" + id,
 			type : "GET",
 			dataType : "xml", 
 			success : function( req ){
@@ -534,14 +827,111 @@
 					$('<option />', {
 						value : value,
 						html : text
-					}).appendTo("#dist");
+					}).appendTo("#dist,#dist2");
 				})	
 				Loader( false );
+				$('#dist2').selectmenu('refresh', true);
 			}
 		})
 	})
 
 
 	$(window).on('resize orientationchange', function(){ ScaleContentToDevice() });
+
+	 $(document).on('pagechange', 'div:(data-role="page")',function(){
+	 	 $.mobile.urlHistory.clearForward()
+	});
+
+	// Save
+
+	$('#form-1-save').on('submit', function(e){
+		e.preventDefault();
+		
+
+		if(! validar( $('#nom') ) ) return false;
+		if(! validar( $('#ape') ) ) return false;
+		if(! validar( $('#apem') ) ) return false;
+		if(! validar( $('#dni') ) ) return false;
+		if(! validar( $('#ema') ) ) return false;
+		if(! validar( $('#eda') ) ) return false;
+		if(! validar( $('#tlf') ) ) return false;
+		// if(! validar( $('#preg3') ) ) return false;
+
+
+		if( $(this).attr('data-send') == 1 ) return;
+
+		$(this).attr('data-send', 1);
+
+
+		$(this).find('img').attr('src', 'img/checkbox-check.png');
+		var data = $(this).serialize();
+		Loader( true, "..." );
+
+		$.ajax({
+			url :  server_path + url_save_form_1, 
+			data : data,
+			type : "POST",
+			success: function( req ){
+				console.log( req );
+				if( req.trim() == "si" ){
+	 				window.location.replace("#forms-opciones");
+				} else {
+					alert("Error pruebe dentro unos minutos");
+					$('#form-1-save').attr('data-send', 0);
+					$('#form-1-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+				}
+				Loader( false, "..." );
+			},
+			fail : function(){
+				alert("Se necesita internet para poder realizar la petición");
+				$('#form-1-save').attr('data-send', 0);
+				$('#form-1-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+			}
+		})
+
+	})
+
+	$('#form-2-save').on('submit', function(e){
+		e.preventDefault();
+		
+
+		// if(! validar( $('#nom2') ) ) return false;
+		// if(! validar( $('#dni2') ) ) return false;
+		// if(! validar( $('#telf_empre2') ) ) return false;
+		// if(! validar( $('#ema_emp2') ) ) return false;
+		// if(! validar( $('#pass') ) ) return false;
+
+		if( $(this).attr('data-send') == 1 ) return;
+
+		$(this).attr('data-send', 1);
+
+
+		$(this).find('img').attr('src', 'img/checkbox-check.png');
+		var data = $(this).serialize();
+		Loader( true, "..." );
+
+		$.ajax({
+			url :  server_path + "registrando_new.php", 
+			data : data,
+			type : "POST",
+			success: function( req ){
+				console.log( req );
+				if( req.trim() == "si" ){
+	 				window.location.replace("#forms-opciones");
+				} else {
+					alert("Error pruebe dentro unos minutos");
+					$('#form-1-save').attr('data-send', 0);
+					$('#form-1-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+				}
+				Loader( false, "..." );
+			},
+			fail : function(){
+				alert("Se necesita internet para poder realizar la petición");
+				$('#form-2-save').attr('data-send', 0);
+				$('#form-2-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+			}
+		})
+
+	})
 </script>
 </html>

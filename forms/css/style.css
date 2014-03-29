@@ -18,6 +18,11 @@ img{
 	margin: auto auto;
 }
 
+h4{
+	text-align: center;
+	color: rgb(17,46, 124);
+}
+
 ::-webkit-input-placeholder {
    color: rgb(17,46,124);
 }
@@ -34,7 +39,7 @@ img{
    color: rgb(17,46,124);  
 }
 
-#home [data-role="main"], #forms-opciones [data-role="main"]{
+#home [data-role="main"], #forms-opciones [data-role="main"], #gracias [data-role="main"]{
 	background: url("../img/background.jpg") no-repeat;
 	background-size: 100% 100%;
 	height: 550px
@@ -72,6 +77,10 @@ img{
 	font-size: .8em !important;
 }
 
+.click-terminos{
+	color:rgb(93,92,92);
+}
+
 .como-funciona{
 	padding: .5em 1.5em 1em 1.5em;
 }
@@ -93,7 +102,8 @@ img{
 }
 
 .logo-home{
-	margin: 100px auto 30px auto;
+	margin: auto auto;
+	padding-top: 100px;
 	width:80%;
 }
 
@@ -167,3 +177,5 @@ img{
 .ui-grid-a{
 	overflow:initial !important;
 }
+
+#forms-opciones div[data-role="header"]{ background : white ; }
