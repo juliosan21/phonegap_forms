@@ -36,7 +36,7 @@
 					</a>	
 				</div>
 				<div>
-					<a href="#form-2">
+					<a id="go-form-2" href="#form-2">
 						<img src="img/home-opcion-4.png" style="width:90%; margin:auto auto;" alt="">
 					</a>	
 				</div>
@@ -59,7 +59,7 @@
 				<span class="arrow-right"></span>
 				Términos y Condiciones
 				<span class="i-back f-right">
-					<a data-transition="none" data-direction="reverse" href="#home">
+					<a data-transition="none" data-direction="reverse" data-rel="back" href="#">
 						<img src="img/icon-back.png" alt="" />
 					</a>
 				</span>
@@ -441,20 +441,22 @@
 				</select>
 
 				<div style="width:70%; margin: auto auto;">
-					<a href="#" data-send="0" class="form-send">
-						<table width="100%">
-							<tr>
-								<td width="80%" class="click-terminos">
+					<table width="100%">
+						<tr>
+							<td width="80%" class="click-terminos">
 									Click aquí para aceptar los
-									Términos y Condiciones y
-									Política de Privacidad
-								</td>
-								<td widht="30%">
+									<a href="#terminos-condiciones">									
+										Términos y Condiciones y
+										Política de Privacidad
+									</a>
+							</td>
+							<td widht="30%">
+								<a href="#" data-send="0" class="form-send">
 									<img src="img/checkbox-uncheck.png">
-								</td>
-							</tr>
-						</table>
-					</a>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</form>		
 		</div><!-- /content -->
@@ -470,7 +472,7 @@
 				<span class="arrow-right"></span>
 				<span style="vertical-align:top; margin-left:5px;">REGISTRO PARA FUNCIONARIOS</span>
 				<span class="i-back f-right">
-					<a href="#forms-opciones" data-transition="none" data-direction="reverse" >
+					<a href="#home" data-transition="none" data-direction="reverse" >
 						<img src="img/icon-back.png" alt="" />
 					</a>
 				</span>
@@ -481,27 +483,22 @@
 			<form action="#" id="form-2-save" name="agregar2">
 				<input id="nom2" name="nom" required="" type="text" class="form-control input-sm" maxlength="100" placeholder="Nombres y Apellidos">
 				<input id="dni2" name="dni" required="" type="text" class="form-control input-sm" maxlength="8" placeholder="D.N.I">
-				<table width="100%">
-					<tr>
-						<td width="50%">
-							<select name="rub" id="rub2" size="1" class="form-control input-sm valid" onclick="ActivarEntidad2(0,this.value)">
-								<option value="0">Tipo de Entidad</option>
-								<option value="1">BANCOS</option>
-								<option value="2">CAJAS MUNICIPALES</option>
-								<option value="3">FINANCIERAS</option>
-								<option value="4">EDPYMES</option>
-								<option value="5">CAJAS RURALES</option>
-								<option value="6">ONGs</option>
-								<option value="7">COOPERATIVAS</option>				
-							</select>
-						</td>
-						<td width="50%">
-							<select required="" name="ent" id="ent2" size="1" class="form-control">
-								<option value="0">Entidad Financiera</option>
-							</select>
-						</td>
-					</tr>
-				</table>
+	
+				<select name="rub" id="rub2" class="form-control input-sm valid" onclick="ActivarEntidad2(0,this.value)">
+					<option value="0">Tipo de Entidad</option>
+					<option value="1">BANCOS</option>
+					<option value="2">CAJAS MUNICIPALES</option>
+					<option value="3">FINANCIERAS</option>
+					<option value="4">EDPYMES</option>
+					<option value="5">CAJAS RURALES</option>
+					<option value="6">ONGs</option>
+					<option value="7">COOPERATIVAS</option>				
+				</select>
+		
+				<select required="" name="ent" id="ent2"  class="form-control">
+					<option value="0">Entidad Financiera</option>
+				</select>
+					
 
 				<table width="100%">
 					<tr>
@@ -530,45 +527,41 @@
 
 				<h4>¿ TU ZONA DE ATENCIÓN Y TIPO DE CLIENTE?</h4>
 
-				<table width="100%">
-					<tr>
-						<td>
-							<select required="required" name="depa" id="depa" size="1" class="form-control input-sm valid">
-							<!--      <option value="11660000">MEXICO</option> -->
-						      <option selected="selected" value="11950000">PERU</option>
-					      </select>
-						</td>
-						<td>
-						    <select name="prov" class="prov" >
-								<option>Seleccione Provincia</option>
-								<option value="11950300">AMAZONAS</option>
-								<option value="11950200">ANCASH</option>
-								<option value="11950400">APURIMAC</option>
-								<option value="11950500">AREQUIPA</option>
-								<option value="11950600">AYACUCHO</option>
-								<option value="11950700">CAJAMARCA</option>
-								<option value="11950800">CUSCO</option>
-								<option value="11950900">HUANCAVELICA</option>
-								<option value="11951200">HUANUCO</option>
-								<option value="11951300">ICA</option>
-								<option value="11951400">JUNIN</option>
-								<option value="11951500">LA LIBERTAD</option>
-								<option value="11951600">LAMBAYEQUE</option>
-								<option value="11950100">LIMA</option>
-								<option value="11951700">LORETO</option>
-								<option value="11951800">MADRE DE DIOS</option>
-								<option value="11951900">MOQUEGUA</option>
-								<option value="11952000">PASCO</option>
-								<option value="11952100">PIURA</option>
-								<option value="11952200">PUNO</option>
-								<option value="11952300">SAN MARTIN</option>
-								<option value="11952400">TACNA</option>
-								<option value="11952500">TUMBES</option>
-								<option value="11952600">UCAYALI</option>
-						    </select>
-						</td>
-					</tr>
-				</table>
+				
+	
+				<select required="required" name="depa" id="depa" size="1" class="form-control input-sm valid">
+				<!--      <option value="11660000">MEXICO</option> -->
+				      <option selected="selected" value="11950000">PERU</option>
+			  	</select>
+	
+			    <select name="prov" class="prov" >
+					<option>Seleccione Provincia</option>
+					<option value="11950300">AMAZONAS</option>
+					<option value="11950200">ANCASH</option>
+					<option value="11950400">APURIMAC</option>
+					<option value="11950500">AREQUIPA</option>
+					<option value="11950600">AYACUCHO</option>
+					<option value="11950700">CAJAMARCA</option>
+					<option value="11950800">CUSCO</option>
+					<option value="11950900">HUANCAVELICA</option>
+					<option value="11951200">HUANUCO</option>
+					<option value="11951300">ICA</option>
+					<option value="11951400">JUNIN</option>
+					<option value="11951500">LA LIBERTAD</option>
+					<option value="11951600">LAMBAYEQUE</option>
+					<option value="11950100">LIMA</option>
+					<option value="11951700">LORETO</option>
+					<option value="11951800">MADRE DE DIOS</option>
+					<option value="11951900">MOQUEGUA</option>
+					<option value="11952000">PASCO</option>
+					<option value="11952100">PIURA</option>
+					<option value="11952200">PUNO</option>
+					<option value="11952300">SAN MARTIN</option>
+					<option value="11952400">TACNA</option>
+					<option value="11952500">TUMBES</option>
+					<option value="11952600">UCAYALI</option>
+			    </select>
+		
 
 				<div class="ui-field-contain">
 					<select name="itemsCity[]" multiple="multiple" id="dist2" data-native-menu="false">
@@ -577,7 +570,7 @@
 				</div>
 					
 				
-				<div class="ui-field-contain" style="width:100%;">
+				<div class="ui-field-contain">
 					<select name="itemsC[]"  multiple="multiple" id="itemsC" data-native-menu="false">
 						<option>Tipos de Cliente:</option>
 						<option value="1">Empleado Dependiente con Boleta</option>
@@ -628,26 +621,27 @@
 					
 
 				<div style="width:70%; margin: auto auto;">
-					<a href="#" data-send="0" class="form-send">
 						<table width="100%">
 							<tr>
 								<td width="80%" class="click-terminos">
-									Click aquí para aceptar los
-									Términos y Condiciones y
-									Política de Privacidad
+										Click aquí para aceptar los
+										<a href="#terminos-condiciones">
+											Términos y Condiciones y
+											Política de Privacidad
+										</a>
 								</td>
 								<td widht="30%">
-									<img src="img/checkbox-uncheck.png">
+									<a href="#" data-send="0" class="form-send">
+										<img src="img/checkbox-uncheck.png">
+									</a>
 								</td>
 							</tr>
 						</table>
-					</a>
 				</div>
 				
 			</form>		
 		</div><!-- /content -->
 	</div><!-- /page -->
-	
 	
 	<div data-role="page" id="gracias">
 		<div data-role="main" class="ui-content">
@@ -748,7 +742,7 @@
 	}
 
 	$('.form-send').on('click', function(){
-		$(this).parent().parent().trigger("submit");
+		$(this).parent().parent().parent().parent().parent().trigger("submit");
 	})
 
 
@@ -838,10 +832,15 @@
 
 	$(window).on('resize orientationchange', function(){ ScaleContentToDevice() });
 
-	 $(document).on('pagechange', 'div:(data-role="page")',function(){
+	 $(document).on('pagechange', 'div[data-role="page"]',function(){
 	 	 $.mobile.urlHistory.clearForward()
 	});
 
+	$('#go-form-2').on('click', function(){
+		$('#form-2-save input').val("");
+		$('#form-2-save').attr('data-send', 0);
+		$('#form-2-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+	})
 	// Save
 
 	$('#form-1-save').on('submit', function(e){
@@ -874,7 +873,7 @@
 			success: function( req ){
 				console.log( req );
 				if( req.trim() == "si" ){
-	 				window.location.replace("#forms-opciones");
+	 				window.location.replace("#gracias");
 				} else {
 					alert("Error pruebe dentro unos minutos");
 					$('#form-1-save').attr('data-send', 0);
@@ -895,11 +894,11 @@
 		e.preventDefault();
 		
 
-		// if(! validar( $('#nom2') ) ) return false;
-		// if(! validar( $('#dni2') ) ) return false;
-		// if(! validar( $('#telf_empre2') ) ) return false;
-		// if(! validar( $('#ema_emp2') ) ) return false;
-		// if(! validar( $('#pass') ) ) return false;
+		if(! validar( $('#nom2') ) ) return false;
+		if(! validar( $('#dni2') ) ) return false;
+		if(! validar( $('#telf_empre2') ) ) return false;
+		if(! validar( $('#ema_emp2') ) ) return false;
+		if(! validar( $('#pass') ) ) return false;
 
 		if( $(this).attr('data-send') == 1 ) return;
 
@@ -917,11 +916,11 @@
 			success: function( req ){
 				console.log( req );
 				if( req.trim() == "si" ){
-	 				window.location.replace("#forms-opciones");
+	 				window.location.replace("#gracias");
 				} else {
 					alert("Error pruebe dentro unos minutos");
-					$('#form-1-save').attr('data-send', 0);
-					$('#form-1-save').find('img').attr('src', 'img/checkbox-uncheck.png');
+					$('#form-2-save').attr('data-send', 0);
+					$('#form-2-save').find('img').attr('src', 'img/checkbox-uncheck.png');
 				}
 				Loader( false, "..." );
 			},
